@@ -1,5 +1,7 @@
 ﻿# Mouse Click Decal Shader
 
+![A Mouse Click](Docs/MouseClick.png)
+
 ## Script : Scripts/ShowClickDecal.cs
 
 This is a sample, used by the demo scene, and intended to show how to control the effect by setting shader properties from a script.  It isn't intended for real use, but feel free to modify it or use any parts you find useful.

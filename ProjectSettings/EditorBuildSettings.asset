@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Mouse Click Decal Shader Demo.unity
+    guid: 77240019d4466084eb9a2d19e59946c8
   m_configObjects: {}

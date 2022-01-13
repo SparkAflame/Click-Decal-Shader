@@ -5,12 +5,17 @@ position of a mouse click, finger tap, etc.  It resembles the effect seen in
 some top-down click-to-move games.  It is written using Shader Graph and full
 source is included.
 
+![A Mouse Click](Packages/Click%20Point%20Decal%20Shader/Docs/MouseClick.png)
+
 Decal shaders were first added to URP in version 12.0.  Consequently this
 project requires Unity 2021.2.7 or later with URP 12.1.2 or later.
 Unfortunately the decal feature in URP 12 is incomplete hence there are some
 minor issues with the shader.  I expect some if not all of these issues to be
 fixed eventually but they are beyond my control - we are entirely reliant on
 Unity to make the necessary changes.
+
+Details about the scripts and shaders can be found here:
+[Readme.md](Packages/Click%20Point%20Decal%20Shader/Readme.md)
 
 ## Quick Start 1 - Full Project
 
