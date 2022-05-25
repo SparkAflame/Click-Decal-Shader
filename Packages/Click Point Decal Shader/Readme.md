@@ -2,19 +2,32 @@
 
 ![A Mouse Click](Docs/MouseClick.png)
 
-## Script : Scripts/ShowClickDecal.cs
+## Script : Scripts/AnimateClickDecal.cs
 
-This is a sample, used by the demo scene, and intended to show how to control the effect by setting shader properties from a script.  It isn't intended for real use, but feel free to modify it or use any parts you find useful.
+This script animates the decal and is expected to be attached to the same game object or prefab as the
+URP decal projector component.  See "Prefabs/Click Decal" for an example of its use.
 
 ### Properties
 
 Property          | Description
 ---               | ---
-Show Click        | Enables or disables completely this decal projector.
 Show Duration     | How many complete cycles of the effect are shown.  May be fractional.
 Speed             | How quickly the animation plays.  Negative speeds play the effect backwards.
-Play Continuously | If enabled then the effect plays continuously for as long as the mouse button is pressed.  Otherwise it plays Show Duration times then stops until the button is released and pressed again.
 
+## Script : Scripts/***ClickDecalManager.cs
+
+These scripts manage spawning and destroying decals.  Three versions are provided:
+
+1. `BasicClickDecalManager` - multiple decals, no object pooling.
+1. `MovingClickDecalManager` - single decal, can follow mouse position.
+1. `PoolingClickDecalManager` - BasicClickDecalManager with object pooling.
+
+### Properties
+
+Property          | Description
+---               | ---
+Decal Prefab      | The prefab containing the decal projector.
+Maximum Decals    | The maximum number of simultaneous decals this manager can spawn.
 
 ## Shader : "Shaders/Graphs/Decal/PulsingCircleDecal"
 
@@ -22,9 +35,11 @@ All the shader graph does is to colour the output from the subgraph "SDF Circle 
 
 ### Sub-Graph : "Shaders/SubGraphs/SDF Circle Pulse"
 
-Contains all the code for generating the pulsing circle effect.  
+Contains all the code for generating the pulsing circle effect.
 
-### Material : "Materials/Mouse Click Decal"
+The outputs from several of these nodes can be combined to create more interesting composite effects.
+
+### Material : "Materials/Click Decal"
 
 This material exists as a baseline with sensible defaults.
 

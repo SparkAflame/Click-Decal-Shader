@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2048493743716404763}
   - component: {fileID: 2048493743716404756}
-  - component: {fileID: 2048493743716404762}
+  - component: {fileID: 3627149040234191864}
   m_Layer: 0
-  m_Name: Mouse Click Decal
+  m_Name: Click Decal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048493743716404757}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
@@ -54,9 +54,9 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 2.5}
-  m_Size: {x: 0.5, y: 0.5, z: 5}
+  m_Size: {x: 1, y: 1, z: 5}
   m_FadeFactor: 1
---- !u!114 &2048493743716404762
+--- !u!114 &3627149040234191864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,10 +65,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2048493743716404757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b04aa64a657b5e040b1f43ded6ad5549, type: 3}
+  m_Script: {fileID: 11500000, guid: 4002c445456e46309e69469d0cd4f72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showClick: 1
   _showDuration: 1
-  _speed: 1
-  _playContinuously: 0
+  _speed: 0.5
