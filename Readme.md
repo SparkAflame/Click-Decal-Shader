@@ -74,31 +74,34 @@ If you just want the package containing the shader and manager scripts:
    * The Decal Renderer feature is installed:
       [https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.0/manual/renderer-feature-decal.html]()
 
-1. Open a git command line and change working directory to your project's
-   "Packages" folder. (Note that currently it isn't possible to use the Package
-   Manager to add the package from this repo to your project; Package Manager's
-   git support is simply too crude.)
+1. Install the package into your project using either Unity's built-in Package
+   Manager, or a git command line:
 
-1. Do a sparse checkout of this repository (git 2.25.0 and later):
-   
-   ```shell
-   > mkdir "Click Decal Shader"
-   > cd "Click Decal Shader"
-   > git init
-   > git remote add -f origin "https://github.com/SparkAflame/Click-Decal-Shader.git"
-   > git sparse-checkout init
-   > git sparse-checkout set "Packages/Click Point Decal Shader"
-   > git pull origin master
-   ```
-   
-   See this Stack Overflow question for more information or if you are using a
-   git version >= 1.7.0 and < 2.25.0:
-   [https://stackoverflow.com/questions/600079/how-do-i-clone-a-subdirectory-only-of-a-git-repository]().
+   * Package Manager: Open the Package Manager window and add the package using this URL:
+     https://github.com/SparkAflame/Click-Decal-Shader.git?path=Packages/Click%20Point%20Decal%20Shader
 
-   If you are using git < 1.7.0 you cannot perform a sparse checkout.  Your
-   only option is to clone the entire repository as described above to a
-   temporary folder and then copy the folder "Packages/Click Point Decal Shader"
-   from that project to "Packages" in yours.
+   * GIT: Open a git command line, change the working directory to your project's
+      "Packages" folder and do a sparse checkout of this repository (git 2.25.0 and
+      later):
+      
+      ```shell
+      > mkdir "Click Decal Shader"
+      > cd "Click Decal Shader"
+      > git init
+      > git remote add -f origin "https://github.com/SparkAflame/Click-Decal-Shader.git"
+      > git sparse-checkout init
+      > git sparse-checkout set "Packages/Click Point Decal Shader"
+      > git pull origin master
+      ```
+      
+      See this Stack Overflow question for more information or if you are using a
+      git version >= 1.7.0 and < 2.25.0:
+      [https://stackoverflow.com/questions/600079/how-do-i-clone-a-subdirectory-only-of-a-git-repository]().
+
+      If you are using git < 1.7.0 you cannot perform a sparse checkout.  Your
+      only option is to clone the entire repository as described above to a
+      temporary folder and then copy the folder "Packages/Click Point Decal Shader"
+      from that project to "Packages" in yours.
 
 
 # Using

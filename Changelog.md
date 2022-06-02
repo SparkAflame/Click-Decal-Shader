@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.2
+
+* Correction to documentation: Package Manager DOES allow UPM packages to be installed from
+  a subdirectory of a git repository.
+
 ## 1.0.1
 
 * Add decal managers for various click effects:

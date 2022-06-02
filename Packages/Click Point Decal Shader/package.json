@@ -1,12 +1,12 @@
 {
   "name": "sparkaflame.shaders.clickpoint",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Click Point Decal Shader",
   "description": "A decal shader for highlighting the mouse click point in, for example, top-down point-and-click games.  Requires Unity 2021.2.7 or later and URP 12.1.2 or later.",
   "unity": "2021.2",
   "unityRelease": "7f1",
   "dependencies": {
-    "com.unity.shadergraph": "12.1.2"
+    "com.unity.shadergraph": "12.1.6"
   },
   "keywords": [],
   "author": {
