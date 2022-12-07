@@ -3,6 +3,8 @@
 // All rights reserved.
 // 
 
+using System.Text;
+
 using UnityEngine;
 
 
@@ -14,6 +16,24 @@ namespace SparkAflame.ClickShader
    /// </summary>
    public class BasicClickDecalManager : MonoBehaviour
    {
+      #region > > > > >   Editor Exposed Fields   < < < < <
+
+      [Tooltip( "The decal prefab." )]
+      [SerializeField]
+      private AnimateClickDecal _decalPrefab;
+
+      [Tooltip( "The maximum number of simultaneous decals this manager can spawn." )]
+      [SerializeField]
+      private int _maximumDecals = 3;
+
+#if DEBUG
+      [SerializeField]
+      private bool _showDebug;
+#endif
+
+      #endregion
+
+
       #region > > > > >   Properties   < < < < <
 
       protected bool CanShowDecal => ( _numberAllocated < _maximumDecals ) || ( _maximumDecals < 0 );
@@ -23,19 +43,6 @@ namespace SparkAflame.ClickShader
          get => _maximumDecals;
          set => _maximumDecals = value;
       }
-
-      #endregion
-
-
-      #region > > > > >   Script Editor Properties   < < < < <
-
-      [Tooltip( "The decal prefab." )]
-      [SerializeField]
-      private AnimateClickDecal _decalPrefab;
-
-      [Tooltip( "The maximum number of simultaneous decals this manager can spawn." )]
-      [SerializeField]
-      private int _maximumDecals = 3;
 
       #endregion
 
@@ -60,7 +67,20 @@ namespace SparkAflame.ClickShader
 #if DEBUG
       private void OnDestroy()
       {
-         Debug.Log( $"\"{name}\" : Currently Active = {_numberAllocated.ToString()}, Total Allocations = {_totalAllocations.ToString()}, Total Releases = {_totalReleases.ToString()}" );
+         if ( _showDebug )
+         {
+            Debug.Log(
+               new StringBuilder()
+                  .Append( name )
+                  .Append( " : Currently Active = " )
+                  .Append( _numberAllocated.ToString() )
+                  .Append( ", Total Allocations = " )
+                  .Append( _totalAllocations.ToString() )
+                  .Append( ", Total Releases = " )
+                  .Append( _totalReleases.ToString() )
+                  .ToString()
+            );
+         }
       }
 #endif
 
@@ -73,6 +93,7 @@ namespace SparkAflame.ClickShader
       {
          // Do nothing.
       }
+
 
       /// <summary>
       ///    Hides the decal - this implementation deletes it from the scene.

@@ -8,11 +8,13 @@ source is included.
 ![A Mouse Click](Packages/Click%20Point%20Decal%20Shader/Docs/MouseClick.png)
 
 Decal shaders were first added to URP in version 12.0.  Consequently this
-project requires Unity 2021.3.0 or later with URP 12.1.6 or later.
+project requires Unity 2021.3.6 or later with URP 12.1.7 or later.
 Unfortunately the decal feature in URP 12 is incomplete hence there are some
 minor issues with the shader.  I expect some if not all of these issues to be
-fixed eventually but they are beyond my control - we are entirely reliant on
-Unity to make the necessary changes.
+fixed eventually but they are beyond my control.
+
+* Use Render Layers in URP 14.0 and later (Unity 2022.2+) to limit which
+  objects receive the decal projection.
 
 Details about the scripts and shaders can be found here:
 [Readme.md](Packages/Click%20Point%20Decal%20Shader/Readme.md)
@@ -70,7 +72,7 @@ If you just want the package containing the shader and manager scripts:
 
 1. Ensure your project is correctly set up:
 
-   * URP is installed, is version 12.1.6 or later, and is correctly configured.
+   * URP is installed, is version 12.1.7 or later, and is correctly configured.
    * The Decal Renderer feature is installed:
       [https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.0/manual/renderer-feature-decal.html]()
 
@@ -131,6 +133,11 @@ The easiest way to get started is to use one of the three prefabs provided:
 The demo scene allows you to experiment with each of these.  Just drag the 
 appropriate scene object into the Decal Manager field of the Mouse Button
 Handler scene object.
+
+If you are using URP 14.0 (Unity 2022.2) or later then decal layers can be used
+to limit which objects or surfaces should receive the decal projections.  See
+[https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/features/rendering-layers.html]()
+for details.
 
 Examine the demo scene to see how the prefabs are used.
 
